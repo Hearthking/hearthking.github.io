@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class=" js flexbox canvas rgba backgroundsize borderradius boxshadow cssanimations csstransforms csstransforms3d csstransitions video audio svg"><script type="text/javascript">
+    var spector;
+    var captureOnLoad = false;
+    var captureOffScreen = false;
+    window.__SPECTOR_Canvases = [];
+
+    (function() {
+        var __SPECTOR_Origin_EXTENSION_GetContext = HTMLCanvasElement.prototype.getContext;
+        HTMLCanvasElement.prototype.__SPECTOR_Origin_EXTENSION_GetContext = __SPECTOR_Origin_EXTENSION_GetContext;
+
+        if (typeof OffscreenCanvas !== 'undefined') {
+            var __SPECTOR_Origin_EXTENSION_OffscreenGetContext = OffscreenCanvas.prototype.getContext;
+            OffscreenCanvas.prototype.__SPECTOR_Origin_EXTENSION_OffscreenGetContext = __SPECTOR_Origin_EXTENSION_OffscreenGetContext;
+
+            OffscreenCanvas.prototype.getContext = function () {
+                var context = null;
+                if (!arguments.length) {
+                    return context;
+                }
+    
+                if (arguments.length === 1) {
+                    context = this.__SPECTOR_Origin_EXTENSION_OffscreenGetContext(arguments[0]);
+                    if (context === null) {
+                        return context;
+                    }
+                }
+                else if (arguments.length === 2) {
+                    context = this.__SPECTOR_Origin_EXTENSION_OffscreenGetContext(arguments[0], arguments[1]);
+                    if (context === null) {
+                        return context;
+                    }
+                }
+    
+                var contextNames = ["webgl", "experimental-webgl", "webgl2", "experimental-webgl2"];
+                if (contextNames.indexOf(arguments[0]) !== -1) {
+                    // context.canvas.setAttribute("__spector_context_type", arguments[0]);
+                    // Notify the page a canvas is available.
+                    var myEvent = new CustomEvent("SpectorWebGLCanvasAvailableEvent");
+                    document.dispatchEvent(myEvent);
+                    this.id = "Offscreen";
+                    window.__SPECTOR_Canvases.push(this);
+    
+                    if (captureOnLoad) {
+                        // Ensures canvas is in the dom to capture the one we are currently tracking.
+                        if (false) {
+                            spector.captureContext(context, 500, false, false);
+                            captureOnLoad = false;
+                        }
+                    }
+                }
+    
+                return context;
+            }
+        }
+
+        HTMLCanvasElement.prototype.getContext = function () {
+            var context = null;
+            if (!arguments.length) {
+                return context;
+            }
+
+            if (arguments.length === 1) {
+                context = this.__SPECTOR_Origin_EXTENSION_GetContext(arguments[0]);
+                if (context === null) {
+                    return context;
+                }
+            }
+            else if (arguments.length === 2) {
+                context = this.__SPECTOR_Origin_EXTENSION_GetContext(arguments[0], arguments[1]);
+                if (context === null) {
+                    return context;
+                }
+            }
+
+            var contextNames = ["webgl", "experimental-webgl", "webgl2", "experimental-webgl2"];
+            if (contextNames.indexOf(arguments[0]) !== -1) {
+                context.canvas.setAttribute("__spector_context_type", arguments[0]);
+                // Notify the page a canvas is available.
+                var myEvent = new CustomEvent("SpectorWebGLCanvasAvailableEvent");
+                document.dispatchEvent(myEvent);
+
+                if (captureOffScreen) {
+                    var found = false;
+                    for (var i = 0; i < window.__SPECTOR_Canvases.length; i++) {
+                        if (window.__SPECTOR_Canvases[i] === this) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        window.__SPECTOR_Canvases.push(this);
+                    }
+                }
+
+                if (captureOnLoad) {
+                    // Ensures canvas is in the dom to capture the one we are currently tracking.
+                    if (this.parentElement || false) {
+                        spector.captureContext(context, 500, false, false);
+                        captureOnLoad = false;
+                    }
+                }
+            }
+
+            return context;
+        }
+    })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="The Page Description">
+		<style type="text/css">@-ms-viewport{width: device-width;}</style>
+		<title>TimelineTec-Terms of Service</title>
+		<link rel="stylesheet" href="./TimelineTec-Terms of Service_files/layers.min.css" media="screen">
+		<link rel="stylesheet" href="./TimelineTec-Terms of Service_files/font-awesome.min.css" media="screen"> 
+		<link rel="stylesheet" href="./TimelineTec-Terms of Service_files/style.css" media="screen">	
+        <link rel="icon" href="./TimelineTec - Privacy Policy_files/favicon.ico">			
+	<style>.fluidvids-elem{position:absolute;top:0px;left:0px;width:100%;height:100%;}.fluidvids{width:100%;position:relative;}</style></head>
+	<body class="portfolio">
+
+	    
+	<header role="banner" class="transparent light fixed-header">
+			<div class="row">
+				<div class="nav-inner row-content buffer-left buffer-right even clear-after">
+					<div id="brand">
+						<h1 class="reset cent"><a href="https://www.timelinetec.com"><img src="./TimelineTec-Terms of Service_files/web_logo.png" alt="logo" width="240px"></a></h1>
+					</div><!-- brand -->
+					<a id="menu-toggle" href="https://www.timelinetec.com/en/termsofservice.html#"><i class="fa fa-bars fa-lg"></i></a>
+				</div><!-- row-content -->
+			</div><!-- row -->	
+		</header> 	
+
+		
+		<div id="main" class="row">
+				<div class="row-content buffer-left buffer-right buffer-bottom">
+					<div class="post-area clear-after">
+						<article role="main"><br>
+							<p></p><h1>Terms of sevrice </h1><p></p>
+							<p>By using TimelineTec's APP (the “APP”), you are agreeing to our privacy policy, which applies to the use of the Site and TimelineTec's applications.  TimelineTec reserves the right at any time, without further notice, to change and modify this privacy policy.  You should check this privacy policy periodically.</p>
+                            <p>We here at TimelineTec respect your privacy.  Here is a little explanation of when and why we might collect your data, and what we do with it . If you have any questions about this Privacy Policy, please contact us！</p>
+                            <h3>I. Collection and Use of Personal Information</h3>
+                            <p>When you use TimelineTec's Applications or Web sites, we may ask you to provide personal information, such as your e-mail address. We use this personal information to communicate with you, to inform and take contact with you. The information may also be used in order to investigate, prevent or take action regarding unauthorized use of the Services. If we use this information in a manner different than the purpose for which it was collected, then we will ask for your consent prior to such use.<br>
+						    We also collect anonymous, non-personal information, such as your IP address, the type of browser you use, your browser’s language, your web request and the date and time of your request. Such information does not identify you individually. Non-personal information can be used, for example, in marketing, auditing, to provide or to improve our services and also to develop new services. </p>
+                          <h3>II. Information Sharing						  </h3>
+                          <p>Unless the Law forces us, we will not share any personal information with any unaffiliated third party for any purpose…ever.</p>
+                            
+                             <h3>III. Security                             </h3>
+                             <p>While we take all necessary measures to protect your personal information, no method of transmission over the Internet or method of electronic storage is fully secure, therefore we cannot guarantee complete security. <br>
+                               In order to provide products or services you have requested;We require that these parties agree to process such information based on our instructions and in compliance with this policy;There are other instances in which we may divulge your personal information, such as when required by law, regulation, or litigation. <br>
+                             If TimelineTec becomes involved in a merger, acquisition, or any form of sale of some or all of its assets, we will provide notice before personal information is transferred and becomes subject to a different privacy policy.</p>
+                          <h3>IV. Links to other websites                         </h3>
+                          <p>Our Site may contain links to enable you to visit other websites of interest, including user blogs and Twitter feeds.  We do not have any control over those other websites and are not responsible for the protection and privacy of any information which you provide on those websites. You should become familiar with look at the privacy statement applicable to each website you visit.<br>
+                               <br>
+                               If there’re some questions, please contact us at:<br>
+<a href="mailto:1056178166@qq.com">1056178166@qq.com</a><br>
+                             </p>
+                          
+						</article>
+
+					</div><!-- post-area -->
+					<!-- comment-section -->
+	                      <!-- post-comment -->							
+											
+				</div><!-- row-content -->
+			</div><!-- row -->
+		<!-- main -->
+
+	<footer role="contentinfo">
+			<div class="row">
+				<div class="row-content buffer clear-after">
+				
+					<section id="bottom-footer">
+						<p class="keep-left">© 2021 TimelineTec. All Rights Reserved.</p>
+					</section><!-- bottom-footer -->		
+				</div><!-- row-content -->	
+			</div><!-- row -->	
+		</footer>
+		<script src="./TimelineTec-Terms of Service_files/jquery.js"></script>	
+		<script src="./TimelineTec-Terms of Service_files/plugins.js"></script>
+		<script src="./TimelineTec-Terms of Service_files/beetle.js"></script>
+	
+
+
+</body></html>
